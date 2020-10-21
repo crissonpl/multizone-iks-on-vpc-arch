@@ -1,0 +1,544 @@
+ChrisMBA:portworx-iks-on-vpc chris$ terraform apply
+var.cluster
+  name of existing kubernetes cluster
+
+  Enter a value: thanos-iks-mzr-cluster
+
+var.ibm_region
+  region where all created resources will be deployed
+
+  Enter a value: eu-gb
+
+var.ibmcloud_api_key
+  api key for IBM Cloud
+
+  Enter a value: UVmfjoboT9FrhQ-_TzDMcASR9EOiq4KpIlgMDsL8-wFu
+
+data.ibm_iam_auth_token.token: Refreshing state...
+data.ibm_resource_group.group: Refreshing state...
+data.ibm_container_cluster_config.cluster: Refreshing state...
+data.ibm_container_vpc_cluster.cluster: Refreshing state...
+data.kubernetes_secret.image_pull_secret: Refreshing state...
+data.ibm_container_vpc_cluster_worker.worker[4]: Refreshing state...
+data.ibm_container_vpc_cluster_worker.worker[2]: Refreshing state...
+data.ibm_container_vpc_cluster_worker.worker[1]: Refreshing state...
+data.ibm_container_vpc_cluster_worker.worker[3]: Refreshing state...
+data.ibm_container_vpc_cluster_worker.worker[5]: Refreshing state...
+data.ibm_container_vpc_cluster_worker.worker[0]: Refreshing state...
+data.ibm_is_subnet.subnet[4]: Refreshing state...
+data.ibm_is_subnet.subnet[2]: Refreshing state...
+data.ibm_is_subnet.subnet[0]: Refreshing state...
+data.ibm_is_subnet.subnet[5]: Refreshing state...
+data.ibm_is_subnet.subnet[3]: Refreshing state...
+data.ibm_is_subnet.subnet[1]: Refreshing state...
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # ibm_is_volume.volume[0] will be created
+  + resource "ibm_is_volume" "volume" {
+      + capacity                = 100
+      + crn                     = (known after apply)
+      + encryption_key          = (known after apply)
+      + id                      = (known after apply)
+      + iops                    = (known after apply)
+      + name                    = "vol-worker-00000149"
+      + profile                 = "10iops-tier"
+      + resource_controller_url = (known after apply)
+      + resource_crn            = (known after apply)
+      + resource_group          = "5fb03165e7fa4eff8553b3d268641858"
+      + resource_group_name     = (known after apply)
+      + resource_name           = (known after apply)
+      + resource_status         = (known after apply)
+      + status                  = (known after apply)
+      + tags                    = (known after apply)
+      + zone                    = "eu-gb-1"
+    }
+
+  # ibm_is_volume.volume[1] will be created
+  + resource "ibm_is_volume" "volume" {
+      + capacity                = 100
+      + crn                     = (known after apply)
+      + encryption_key          = (known after apply)
+      + id                      = (known after apply)
+      + iops                    = (known after apply)
+      + name                    = "vol-worker-00000221"
+      + profile                 = "10iops-tier"
+      + resource_controller_url = (known after apply)
+      + resource_crn            = (known after apply)
+      + resource_group          = "5fb03165e7fa4eff8553b3d268641858"
+      + resource_group_name     = (known after apply)
+      + resource_name           = (known after apply)
+      + resource_status         = (known after apply)
+      + status                  = (known after apply)
+      + tags                    = (known after apply)
+      + zone                    = "eu-gb-1"
+    }
+
+  # ibm_is_volume.volume[2] will be created
+  + resource "ibm_is_volume" "volume" {
+      + capacity                = 100
+      + crn                     = (known after apply)
+      + encryption_key          = (known after apply)
+      + id                      = (known after apply)
+      + iops                    = (known after apply)
+      + name                    = "vol-worker-000003a9"
+      + profile                 = "10iops-tier"
+      + resource_controller_url = (known after apply)
+      + resource_crn            = (known after apply)
+      + resource_group          = "5fb03165e7fa4eff8553b3d268641858"
+      + resource_group_name     = (known after apply)
+      + resource_name           = (known after apply)
+      + resource_status         = (known after apply)
+      + status                  = (known after apply)
+      + tags                    = (known after apply)
+      + zone                    = "eu-gb-3"
+    }
+
+  # ibm_is_volume.volume[3] will be created
+  + resource "ibm_is_volume" "volume" {
+      + capacity                = 100
+      + crn                     = (known after apply)
+      + encryption_key          = (known after apply)
+      + id                      = (known after apply)
+      + iops                    = (known after apply)
+      + name                    = "vol-worker-00000483"
+      + profile                 = "10iops-tier"
+      + resource_controller_url = (known after apply)
+      + resource_crn            = (known after apply)
+      + resource_group          = "5fb03165e7fa4eff8553b3d268641858"
+      + resource_group_name     = (known after apply)
+      + resource_name           = (known after apply)
+      + resource_status         = (known after apply)
+      + status                  = (known after apply)
+      + tags                    = (known after apply)
+      + zone                    = "eu-gb-3"
+    }
+
+  # ibm_is_volume.volume[4] will be created
+  + resource "ibm_is_volume" "volume" {
+      + capacity                = 100
+      + crn                     = (known after apply)
+      + encryption_key          = (known after apply)
+      + id                      = (known after apply)
+      + iops                    = (known after apply)
+      + name                    = "vol-worker-00000592"
+      + profile                 = "10iops-tier"
+      + resource_controller_url = (known after apply)
+      + resource_crn            = (known after apply)
+      + resource_group          = "5fb03165e7fa4eff8553b3d268641858"
+      + resource_group_name     = (known after apply)
+      + resource_name           = (known after apply)
+      + resource_status         = (known after apply)
+      + status                  = (known after apply)
+      + tags                    = (known after apply)
+      + zone                    = "eu-gb-2"
+    }
+
+  # ibm_is_volume.volume[5] will be created
+  + resource "ibm_is_volume" "volume" {
+      + capacity                = 100
+      + crn                     = (known after apply)
+      + encryption_key          = (known after apply)
+      + id                      = (known after apply)
+      + iops                    = (known after apply)
+      + name                    = "vol-worker-0000065c"
+      + profile                 = "10iops-tier"
+      + resource_controller_url = (known after apply)
+      + resource_crn            = (known after apply)
+      + resource_group          = "5fb03165e7fa4eff8553b3d268641858"
+      + resource_group_name     = (known after apply)
+      + resource_name           = (known after apply)
+      + resource_status         = (known after apply)
+      + status                  = (known after apply)
+      + tags                    = (known after apply)
+      + zone                    = "eu-gb-2"
+    }
+
+  # ibm_resource_instance.portworx will be created
+  + resource "ibm_resource_instance" "portworx" {
+      + crn                     = (known after apply)
+      + dashboard_url           = (known after apply)
+      + extensions              = (known after apply)
+      + guid                    = (known after apply)
+      + id                      = (known after apply)
+      + location                = "eu-gb"
+      + name                    = "thanos-iks-mzr-portworx"
+      + parameters              = {
+          + "apikey"        = "UVmfjoboT9FrhQ-_TzDMcASR9EOiq4KpIlgMDsL8-wFu"
+          + "cluster_name"  = "thanos-iks-mzr-cluster"
+          + "clusters"      = "thanos-iks-mzr-cluster"
+          + "internal_kvdb" = "internal"
+          + "secret_type"   = "k8s"
+        }
+      + plan                    = "px-enterprise"
+      + resource_controller_url = (known after apply)
+      + resource_crn            = (known after apply)
+      + resource_group_id       = "5fb03165e7fa4eff8553b3d268641858"
+      + resource_group_name     = (known after apply)
+      + resource_name           = (known after apply)
+      + resource_status         = (known after apply)
+      + service                 = "portworx"
+      + service_endpoints       = (known after apply)
+      + status                  = (known after apply)
+      + tags                    = [
+          + "clusterid:bu86f6kl0nncepg3oh3g",
+        ]
+    }
+
+  # kubernetes_cluster_role_binding.default will be created
+  + resource "kubernetes_cluster_role_binding" "default" {
+      + id = (known after apply)
+
+      + metadata {
+          + generation       = (known after apply)
+          + name             = "default-cluster-rule"
+          + resource_version = (known after apply)
+          + self_link        = (known after apply)
+          + uid              = (known after apply)
+        }
+
+      + role_ref {
+          + api_group = "rbac.authorization.k8s.io"
+          + kind      = "ClusterRole"
+          + name      = "cluster-admin"
+        }
+
+      + subject {
+          + api_group = (known after apply)
+          + kind      = "ServiceAccount"
+          + name      = "default"
+          + namespace = "kube-system"
+        }
+      + subject {
+          + api_group = (known after apply)
+          + kind      = "ServiceAccount"
+          + name      = "default"
+          + namespace = "kube-system"
+        }
+    }
+
+  # kubernetes_persistent_volume_claim.example will be created
+  + resource "kubernetes_persistent_volume_claim" "example" {
+      + id               = (known after apply)
+      + wait_until_bound = true
+
+      + metadata {
+          + generation       = (known after apply)
+          + name             = "thanos-iks-mzr-example-pvc"
+          + namespace        = "default"
+          + resource_version = (known after apply)
+          + self_link        = (known after apply)
+          + uid              = (known after apply)
+        }
+
+      + spec {
+          + access_modes       = [
+              + "ReadWriteOnce",
+            ]
+          + storage_class_name = "portworx-shared-sc"
+          + volume_name        = (known after apply)
+
+          + resources {
+              + requests = {
+                  + "storage" = "10Gi"
+                }
+            }
+        }
+    }
+
+  # kubernetes_secret.copy_image_pull_secret will be created
+  + resource "kubernetes_secret" "copy_image_pull_secret" {
+      + data = (sensitive value)
+      + id   = (known after apply)
+      + type = "kubernetes.io/dockerconfigjson"
+
+      + metadata {
+          + generation       = (known after apply)
+          + name             = "kube-system-icr-io"
+          + namespace        = "kube-system"
+          + resource_version = (known after apply)
+          + self_link        = (known after apply)
+          + uid              = (known after apply)
+        }
+    }
+
+  # null_resource.deployment will be created
+  + resource "null_resource" "deployment" {
+      + id       = (known after apply)
+      + triggers = {
+          + "deployment_label" = "thanos-iks-mzr"
+          + "file_path"        = "/portworxDir"
+          + "image_name"       = "test"
+        }
+    }
+
+  # null_resource.update_image_pull_secrets will be created
+  + resource "null_resource" "update_image_pull_secrets" {
+      + id = (known after apply)
+    }
+
+  # null_resource.volume_attachment[0] will be created
+  + resource "null_resource" "volume_attachment" {
+      + id = (known after apply)
+    }
+
+  # null_resource.volume_attachment[1] will be created
+  + resource "null_resource" "volume_attachment" {
+      + id = (known after apply)
+    }
+
+  # null_resource.volume_attachment[2] will be created
+  + resource "null_resource" "volume_attachment" {
+      + id = (known after apply)
+    }
+
+  # null_resource.volume_attachment[3] will be created
+  + resource "null_resource" "volume_attachment" {
+      + id = (known after apply)
+    }
+
+  # null_resource.volume_attachment[4] will be created
+  + resource "null_resource" "volume_attachment" {
+      + id = (known after apply)
+    }
+
+  # null_resource.volume_attachment[5] will be created
+  + resource "null_resource" "volume_attachment" {
+      + id = (known after apply)
+    }
+
+Plan: 18 to add, 0 to change, 0 to destroy.
+
+
+Warning: External references from destroy provisioners are deprecated
+
+  on block_storage.tf line 66, in resource "null_resource" "volume_attachment":
+  66:     environment = {
+  67:       TOKEN             = data.ibm_iam_auth_token.token.iam_access_token
+  68:       REGION            = var.ibm_region
+  69:       RESOURCE_GROUP_ID = data.ibm_resource_group.group.id
+  70:       CLUSTER_ID        = data.ibm_container_vpc_cluster.cluster.id
+  71:       WORKER_ID         = data.ibm_container_vpc_cluster_worker.worker[count.index].id
+  72:       VOLUME_ID         = ibm_is_volume.volume[count.index].id
+  73:     }
+
+Destroy-time provisioners and their connection configurations may only
+reference attributes of the related resource, via 'self', 'count.index', or
+'each.key'.
+
+References to other resources during the destroy phase can cause dependency
+cycles and interact poorly with create_before_destroy.
+
+(and 11 more similar warnings elsewhere)
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+ibm_is_volume.volume[0]: Creating...
+ibm_is_volume.volume[2]: Creating...
+ibm_is_volume.volume[5]: Creating...
+ibm_is_volume.volume[1]: Creating...
+ibm_is_volume.volume[4]: Creating...
+ibm_is_volume.volume[3]: Creating...
+kubernetes_secret.copy_image_pull_secret: Creating...
+kubernetes_secret.copy_image_pull_secret: Creation complete after 0s [id=kube-system/kube-system-icr-io]
+null_resource.update_image_pull_secrets: Creating...
+null_resource.update_image_pull_secrets: Provisioning with 'local-exec'...
+null_resource.update_image_pull_secrets (local-exec): Executing: ["/bin/bash" "-c" "#!/bin/bash\n\necho \"Updating $NAMESPACE default service account image pull secrets\"\n\n# Current context\necho \"Config path: $CONFIGPATH\"\nexport KUBECONFIG=$CONFIGPATH\nkubectl config current-context\n\nCOUNT=$(kubectl get serviceaccount default -n $NAMESPACE -o json | jq '.imagePullSecrets | length')\necho \"Found $COUNT image pull secrets\"\n\nif [ $COUNT -eq 0 ]; then\n  kubectl patch -n $NAMESPACE serviceaccount/default -p='{\"imagePullSecrets\": [{\"name\": \"'$SECRET_NAME'\"}]}'\nelse\n  SECRET=$(kubectl get serviceaccount default -n $NAMESPACE -o json | jq '.imagePullSecrets[] | select(.name == \"'$SECRET_NAME'\")')\n\n  if [ \"$SECRET\" == \"\" ]; then \n    kubectl patch -n $NAMESPACE serviceaccount/default --type='json' -p='[{\"op\": \"add\", \"path\": \"/imagePullSecrets/-\", \"value\": {\"name\": \"'$SECRET_NAME'\"}}]'\n  else \n    echo \"Secret already added: $SECRET\"\n  fi\nfi"]
+null_resource.update_image_pull_secrets (local-exec): Updating kube-system default service account image pull secrets
+null_resource.update_image_pull_secrets (local-exec): Config path: /Users/chris/My Repos/Chris-GitHub/portworx-iks-on-vpc/c651bbcb3878ff67e8594461d044d117cf547f35_thanos-iks-mzr-cluster_admin_k8sconfig/config.yml
+null_resource.update_image_pull_secrets (local-exec): thanos-iks-mzr-cluster/bu86f6kl0nncepg3oh3g/admin
+null_resource.update_image_pull_secrets (local-exec): Found 0 image pull secrets
+null_resource.update_image_pull_secrets (local-exec): serviceaccount/default patched
+null_resource.update_image_pull_secrets: Creation complete after 3s [id=3943278463572776165]
+kubernetes_cluster_role_binding.default: Creating...
+kubernetes_cluster_role_binding.default: Creation complete after 0s [id=default-cluster-rule]
+ibm_is_volume.volume[0]: Still creating... [10s elapsed]
+ibm_is_volume.volume[2]: Still creating... [10s elapsed]
+ibm_is_volume.volume[5]: Still creating... [10s elapsed]
+ibm_is_volume.volume[1]: Still creating... [10s elapsed]
+ibm_is_volume.volume[3]: Still creating... [10s elapsed]
+ibm_is_volume.volume[4]: Still creating... [10s elapsed]
+ibm_is_volume.volume[0]: Creation complete after 18s [id=r018-d0a41793-438a-4626-b978-0b0228a7224a]
+ibm_is_volume.volume[5]: Creation complete after 19s [id=r018-1d7c0c58-643d-4864-a10a-eb3153fec89a]
+ibm_is_volume.volume[1]: Creation complete after 19s [id=r018-410e5db6-1f13-46c8-906f-18c48b5db00e]
+ibm_is_volume.volume[4]: Creation complete after 19s [id=r018-519276ef-dac6-4560-ae59-893ff14aeb15]
+ibm_is_volume.volume[3]: Creation complete after 20s [id=r018-037276c0-b7c0-4690-8d38-c020e2026e21]
+ibm_is_volume.volume[2]: Still creating... [20s elapsed]
+ibm_is_volume.volume[2]: Creation complete after 22s [id=r018-c85cfc31-041b-4956-b4f9-8b75b2f7e154]
+null_resource.volume_attachment[4]: Creating...
+null_resource.volume_attachment[1]: Creating...
+null_resource.volume_attachment[3]: Creating...
+null_resource.volume_attachment[5]: Creating...
+null_resource.volume_attachment[4]: Provisioning with 'local-exec'...
+null_resource.volume_attachment[1]: Provisioning with 'local-exec'...
+null_resource.volume_attachment[5]: Provisioning with 'local-exec'...
+null_resource.volume_attachment[3]: Provisioning with 'local-exec'...
+null_resource.volume_attachment[0]: Creating...
+null_resource.volume_attachment[2]: Creating...
+null_resource.volume_attachment[4] (local-exec): Executing: ["/bin/bash" "-c" "#!/bin/bash\n\n# Before creating, check to see if attachment for volume is already present \nID=$(\n    curl -s -X GET -H \"Authorization: $TOKEN\" \\\n        -H \"Content-Type: application/json\" \\\n        -H \"X-Auth-Resource-Group-ID: $RESOURCE_GROUP_ID\" \\\n        \"https://$REGION.containers.cloud.ibm.com/v2/storage/getAttachments?cluster=$CLUSTER_ID&worker=$WORKER_ID\" | jq -r --arg VOLUMEID \"$VOLUME_ID\" '.volume_attachments[] | select(.volume.id==$VOLUMEID) | .id'\n)\n\nif [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n    echo \"Error when trying to /getAttachments\"\nfi\n\n# If should create attachment, create attachment\nif [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n    RESPONSE=$(\n        curl -s -X POST -H \"Authorization: $TOKEN\" \\\n            \"https://$REGION.containers.cloud.ibm.com/v2/storage/vpc/createAttachment?cluster=$CLUSTER_ID&worker=$WORKER_ID&volumeID=$VOLUME_ID\"\n    )\n\n    ID=$(echo $RESPONSE | jq -r .id)\n\n    if [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n        echo \"Error when trying to /createAttachment: $RESPONSE\"\n    fi\nfi\n\necho \"Created attachment for $CLUSTER_ID, $WORKER_ID and $VOLUME_ID: $ID\""]
+null_resource.volume_attachment[1] (local-exec): Executing: ["/bin/bash" "-c" "#!/bin/bash\n\n# Before creating, check to see if attachment for volume is already present \nID=$(\n    curl -s -X GET -H \"Authorization: $TOKEN\" \\\n        -H \"Content-Type: application/json\" \\\n        -H \"X-Auth-Resource-Group-ID: $RESOURCE_GROUP_ID\" \\\n        \"https://$REGION.containers.cloud.ibm.com/v2/storage/getAttachments?cluster=$CLUSTER_ID&worker=$WORKER_ID\" | jq -r --arg VOLUMEID \"$VOLUME_ID\" '.volume_attachments[] | select(.volume.id==$VOLUMEID) | .id'\n)\n\nif [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n    echo \"Error when trying to /getAttachments\"\nfi\n\n# If should create attachment, create attachment\nif [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n    RESPONSE=$(\n        curl -s -X POST -H \"Authorization: $TOKEN\" \\\n            \"https://$REGION.containers.cloud.ibm.com/v2/storage/vpc/createAttachment?cluster=$CLUSTER_ID&worker=$WORKER_ID&volumeID=$VOLUME_ID\"\n    )\n\n    ID=$(echo $RESPONSE | jq -r .id)\n\n    if [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n        echo \"Error when trying to /createAttachment: $RESPONSE\"\n    fi\nfi\n\necho \"Created attachment for $CLUSTER_ID, $WORKER_ID and $VOLUME_ID: $ID\""]
+null_resource.volume_attachment[3] (local-exec): Executing: ["/bin/bash" "-c" "#!/bin/bash\n\n# Before creating, check to see if attachment for volume is already present \nID=$(\n    curl -s -X GET -H \"Authorization: $TOKEN\" \\\n        -H \"Content-Type: application/json\" \\\n        -H \"X-Auth-Resource-Group-ID: $RESOURCE_GROUP_ID\" \\\n        \"https://$REGION.containers.cloud.ibm.com/v2/storage/getAttachments?cluster=$CLUSTER_ID&worker=$WORKER_ID\" | jq -r --arg VOLUMEID \"$VOLUME_ID\" '.volume_attachments[] | select(.volume.id==$VOLUMEID) | .id'\n)\n\nif [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n    echo \"Error when trying to /getAttachments\"\nfi\n\n# If should create attachment, create attachment\nif [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n    RESPONSE=$(\n        curl -s -X POST -H \"Authorization: $TOKEN\" \\\n            \"https://$REGION.containers.cloud.ibm.com/v2/storage/vpc/createAttachment?cluster=$CLUSTER_ID&worker=$WORKER_ID&volumeID=$VOLUME_ID\"\n    )\n\n    ID=$(echo $RESPONSE | jq -r .id)\n\n    if [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n        echo \"Error when trying to /createAttachment: $RESPONSE\"\n    fi\nfi\n\necho \"Created attachment for $CLUSTER_ID, $WORKER_ID and $VOLUME_ID: $ID\""]
+null_resource.volume_attachment[5] (local-exec): Executing: ["/bin/bash" "-c" "#!/bin/bash\n\n# Before creating, check to see if attachment for volume is already present \nID=$(\n    curl -s -X GET -H \"Authorization: $TOKEN\" \\\n        -H \"Content-Type: application/json\" \\\n        -H \"X-Auth-Resource-Group-ID: $RESOURCE_GROUP_ID\" \\\n        \"https://$REGION.containers.cloud.ibm.com/v2/storage/getAttachments?cluster=$CLUSTER_ID&worker=$WORKER_ID\" | jq -r --arg VOLUMEID \"$VOLUME_ID\" '.volume_attachments[] | select(.volume.id==$VOLUMEID) | .id'\n)\n\nif [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n    echo \"Error when trying to /getAttachments\"\nfi\n\n# If should create attachment, create attachment\nif [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n    RESPONSE=$(\n        curl -s -X POST -H \"Authorization: $TOKEN\" \\\n            \"https://$REGION.containers.cloud.ibm.com/v2/storage/vpc/createAttachment?cluster=$CLUSTER_ID&worker=$WORKER_ID&volumeID=$VOLUME_ID\"\n    )\n\n    ID=$(echo $RESPONSE | jq -r .id)\n\n    if [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n        echo \"Error when trying to /createAttachment: $RESPONSE\"\n    fi\nfi\n\necho \"Created attachment for $CLUSTER_ID, $WORKER_ID and $VOLUME_ID: $ID\""]
+null_resource.volume_attachment[2]: Provisioning with 'local-exec'...
+null_resource.volume_attachment[0]: Provisioning with 'local-exec'...
+null_resource.volume_attachment[2] (local-exec): Executing: ["/bin/bash" "-c" "#!/bin/bash\n\n# Before creating, check to see if attachment for volume is already present \nID=$(\n    curl -s -X GET -H \"Authorization: $TOKEN\" \\\n        -H \"Content-Type: application/json\" \\\n        -H \"X-Auth-Resource-Group-ID: $RESOURCE_GROUP_ID\" \\\n        \"https://$REGION.containers.cloud.ibm.com/v2/storage/getAttachments?cluster=$CLUSTER_ID&worker=$WORKER_ID\" | jq -r --arg VOLUMEID \"$VOLUME_ID\" '.volume_attachments[] | select(.volume.id==$VOLUMEID) | .id'\n)\n\nif [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n    echo \"Error when trying to /getAttachments\"\nfi\n\n# If should create attachment, create attachment\nif [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n    RESPONSE=$(\n        curl -s -X POST -H \"Authorization: $TOKEN\" \\\n            \"https://$REGION.containers.cloud.ibm.com/v2/storage/vpc/createAttachment?cluster=$CLUSTER_ID&worker=$WORKER_ID&volumeID=$VOLUME_ID\"\n    )\n\n    ID=$(echo $RESPONSE | jq -r .id)\n\n    if [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n        echo \"Error when trying to /createAttachment: $RESPONSE\"\n    fi\nfi\n\necho \"Created attachment for $CLUSTER_ID, $WORKER_ID and $VOLUME_ID: $ID\""]
+null_resource.volume_attachment[0] (local-exec): Executing: ["/bin/bash" "-c" "#!/bin/bash\n\n# Before creating, check to see if attachment for volume is already present \nID=$(\n    curl -s -X GET -H \"Authorization: $TOKEN\" \\\n        -H \"Content-Type: application/json\" \\\n        -H \"X-Auth-Resource-Group-ID: $RESOURCE_GROUP_ID\" \\\n        \"https://$REGION.containers.cloud.ibm.com/v2/storage/getAttachments?cluster=$CLUSTER_ID&worker=$WORKER_ID\" | jq -r --arg VOLUMEID \"$VOLUME_ID\" '.volume_attachments[] | select(.volume.id==$VOLUMEID) | .id'\n)\n\nif [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n    echo \"Error when trying to /getAttachments\"\nfi\n\n# If should create attachment, create attachment\nif [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n    RESPONSE=$(\n        curl -s -X POST -H \"Authorization: $TOKEN\" \\\n            \"https://$REGION.containers.cloud.ibm.com/v2/storage/vpc/createAttachment?cluster=$CLUSTER_ID&worker=$WORKER_ID&volumeID=$VOLUME_ID\"\n    )\n\n    ID=$(echo $RESPONSE | jq -r .id)\n\n    if [ \"$ID\" == \"\" ] || [ \"$ID\" == \"null\" ]; then \n        echo \"Error when trying to /createAttachment: $RESPONSE\"\n    fi\nfi\n\necho \"Created attachment for $CLUSTER_ID, $WORKER_ID and $VOLUME_ID: $ID\""]
+null_resource.volume_attachment[0] (local-exec): Error when trying to /getAttachments
+null_resource.volume_attachment[1] (local-exec): Error when trying to /getAttachments
+null_resource.volume_attachment[5] (local-exec): Error when trying to /getAttachments
+null_resource.volume_attachment[4] (local-exec): Error when trying to /getAttachments
+null_resource.volume_attachment[3] (local-exec): Error when trying to /getAttachments
+null_resource.volume_attachment[2] (local-exec): Error when trying to /getAttachments
+null_resource.volume_attachment[0] (local-exec): Created attachment for bu86f6kl0nncepg3oh3g, kube-bu86f6kl0nncepg3oh3g-thanosiksmz-default-00000149 and r018-d0a41793-438a-4626-b978-0b0228a7224a: 0787-f7105de3-8e07-42d8-a165-56a397e95216
+null_resource.volume_attachment[0]: Creation complete after 8s [id=5060359685326567994]
+null_resource.volume_attachment[2] (local-exec): Created attachment for bu86f6kl0nncepg3oh3g, kube-bu86f6kl0nncepg3oh3g-thanosiksmz-default-000003a9 and r018-c85cfc31-041b-4956-b4f9-8b75b2f7e154: 07a7-76596d35-fd1c-4180-a643-2c5788d90eea
+null_resource.volume_attachment[2]: Creation complete after 8s [id=8649943255927301946]
+null_resource.volume_attachment[1] (local-exec): Created attachment for bu86f6kl0nncepg3oh3g, kube-bu86f6kl0nncepg3oh3g-thanosiksmz-default-00000221 and r018-410e5db6-1f13-46c8-906f-18c48b5db00e: 0787-66ffd8a2-b366-4c02-abde-625a7a51c5d8
+null_resource.volume_attachment[1]: Creation complete after 8s [id=2977930828811527175]
+null_resource.volume_attachment[5] (local-exec): Created attachment for bu86f6kl0nncepg3oh3g, kube-bu86f6kl0nncepg3oh3g-thanosiksmz-default-0000065c and r018-1d7c0c58-643d-4864-a10a-eb3153fec89a: 0797-f9d7ed33-4674-4a5a-8d28-a614c7443572
+null_resource.volume_attachment[5]: Creation complete after 8s [id=5629979900345398944]
+null_resource.volume_attachment[4] (local-exec): Created attachment for bu86f6kl0nncepg3oh3g, kube-bu86f6kl0nncepg3oh3g-thanosiksmz-default-00000592 and r018-519276ef-dac6-4560-ae59-893ff14aeb15: 0797-a85e9c3c-bd1f-4b62-80ed-4f94a3cbe550
+null_resource.volume_attachment[4]: Creation complete after 9s [id=6360404413450001349]
+null_resource.volume_attachment[3] (local-exec): Created attachment for bu86f6kl0nncepg3oh3g, kube-bu86f6kl0nncepg3oh3g-thanosiksmz-default-00000483 and r018-037276c0-b7c0-4690-8d38-c020e2026e21: 07a7-b6161467-d7a2-4473-8884-658bba39325d
+null_resource.volume_attachment[3]: Creation complete after 10s [id=6182189339330719682]
+ibm_resource_instance.portworx: Creating...
+ibm_resource_instance.portworx: Still creating... [10s elapsed]
+ibm_resource_instance.portworx: Still creating... [20s elapsed]
+ibm_resource_instance.portworx: Still creating... [30s elapsed]
+ibm_resource_instance.portworx: Still creating... [40s elapsed]
+ibm_resource_instance.portworx: Still creating... [50s elapsed]
+ibm_resource_instance.portworx: Still creating... [1m0s elapsed]
+ibm_resource_instance.portworx: Still creating... [1m10s elapsed]
+ibm_resource_instance.portworx: Still creating... [1m20s elapsed]
+ibm_resource_instance.portworx: Still creating... [1m30s elapsed]
+ibm_resource_instance.portworx: Still creating... [1m40s elapsed]
+ibm_resource_instance.portworx: Still creating... [1m50s elapsed]
+ibm_resource_instance.portworx: Still creating... [2m0s elapsed]
+ibm_resource_instance.portworx: Still creating... [2m10s elapsed]
+ibm_resource_instance.portworx: Still creating... [2m20s elapsed]
+ibm_resource_instance.portworx: Still creating... [2m30s elapsed]
+ibm_resource_instance.portworx: Still creating... [2m40s elapsed]
+ibm_resource_instance.portworx: Still creating... [2m50s elapsed]
+ibm_resource_instance.portworx: Still creating... [3m0s elapsed]
+ibm_resource_instance.portworx: Still creating... [3m10s elapsed]
+ibm_resource_instance.portworx: Still creating... [3m20s elapsed]
+ibm_resource_instance.portworx: Still creating... [3m30s elapsed]
+ibm_resource_instance.portworx: Still creating... [3m40s elapsed]
+ibm_resource_instance.portworx: Still creating... [3m50s elapsed]
+ibm_resource_instance.portworx: Still creating... [4m0s elapsed]
+ibm_resource_instance.portworx: Still creating... [4m10s elapsed]
+ibm_resource_instance.portworx: Still creating... [4m20s elapsed]
+ibm_resource_instance.portworx: Still creating... [4m30s elapsed]
+ibm_resource_instance.portworx: Still creating... [4m40s elapsed]
+ibm_resource_instance.portworx: Provisioning with 'local-exec'...
+ibm_resource_instance.portworx (local-exec): Executing: ["/bin/bash" "-c" "#!/bin/bash\n\n# Current context\necho \"Config path: $CONFIGPATH\"\nexport KUBECONFIG=$CONFIGPATH\nkubectl config current-context\n\nDESIRED=$(kubectl get ds/portworx -n kube-system -o json | jq .status.desiredNumberScheduled)\nRUNNING=0\n\nLIMIT=20\nSLEEP_TIME=30\ni=0\n\nwhile [ $i -lt $LIMIT ] && [ $DESIRED -ne $RUNNING ]; do \n    RUNNING=$(kubectl get pods -n kube-system -l name=portworx --field-selector status.phase=Running -o json | jq '.items | length') \n\n    if [ $DESIRED -eq $RUNNING ]; then \n        echo \"(Attempt $i of $LIMIT) Portworx pods: Desired $DESIRED, Running $RUNNING\"\n    else \n        echo \"(Attempt $i of $LIMIT) Portworx pods: Desired $DESIRED, Running $RUNNING, sleeping $SLEEP_TIME\"\n        sleep $SLEEP_TIME\n    fi \n\n    i=$(( $i + 1 ))\ndone\n"]
+ibm_resource_instance.portworx (local-exec): Config path: /Users/chris/My Repos/Chris-GitHub/portworx-iks-on-vpc/c651bbcb3878ff67e8594461d044d117cf547f35_thanos-iks-mzr-cluster_admin_k8sconfig/config.yml
+ibm_resource_instance.portworx (local-exec): thanos-iks-mzr-cluster/bu86f6kl0nncepg3oh3g/admin
+ibm_resource_instance.portworx (local-exec): (Attempt 0 of 20) Portworx pods: Desired 6, Running 6
+ibm_resource_instance.portworx: Creation complete after 4m42s [id=crn:v1:bluemix:public:portworx:eu-gb:a/cb632836143fe71e993e7c61d042c960:f01f96e4-a5e4-4c93-9725-014c90424890::]
+kubernetes_persistent_volume_claim.example: Creating...
+kubernetes_persistent_volume_claim.example: Still creating... [10s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [20s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [30s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [40s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [50s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [1m0s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [1m10s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [1m20s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [1m30s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [1m40s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [1m50s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [2m0s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [2m10s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [2m20s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [2m30s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [2m40s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [2m50s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [3m0s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [3m10s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [3m20s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [3m30s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [3m40s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [3m50s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [4m0s elapsed]
+kubernetes_persistent_volume_claim.example: Still creating... [4m10s elapsed]
+kubernetes_persistent_volume_claim.example: Creation complete after 4m15s [id=default/thanos-iks-mzr-example-pvc]
+null_resource.deployment: Creating...
+null_resource.deployment: Provisioning with 'local-exec'...
+null_resource.deployment (local-exec): Executing: ["/bin/bash" "-c" "#!/bin/bash\n\necho \"Mounting volume to example app\"\n\n# Current context\necho \"Config path: $CONFIGPATH\"\nexport KUBECONFIG=$CONFIGPATH\nkubectl config current-context\n\necho 'apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: \"'$DEPLOYMENT_LABEL-deployment'\"\n  labels:\n    app: \"'$DEPLOYMENT_LABEL'\"\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: \"'$DEPLOYMENT_LABEL-app'\"\n  template:\n    metadata:\n      labels:\n        app: \"'$DEPLOYMENT_LABEL-app'\"\n    spec:\n      schedulerName: stork\n      containers:\n      - image: \"'$IMAGE_NAME'\"\n        name: \"'$DEPLOYMENT_LABEL-container'\"\n        volumeMounts:\n        - name: \"'$DEPLOYMENT_LABEL-volume'\"\n          mountPath: \"'$FILE_PATH'\"\n      volumes:\n      - name: \"'$DEPLOYMENT_LABEL-volume'\"\n        persistentVolumeClaim:\n          claimName: \"'$PVC_NAME'\"' > tmp.yaml\n\ncat tmp.yaml\n\nkubectl apply -f tmp.yaml\n\nrm tmp.yaml\n\nkubectl describe deployment $DEPLOYMENT_LABEL-deployment"]
+null_resource.deployment (local-exec): Mounting volume to example app
+null_resource.deployment (local-exec): Config path: /Users/chris/My Repos/Chris-GitHub/portworx-iks-on-vpc/c651bbcb3878ff67e8594461d044d117cf547f35_thanos-iks-mzr-cluster_admin_k8sconfig/config.yml
+null_resource.deployment (local-exec): thanos-iks-mzr-cluster/bu86f6kl0nncepg3oh3g/admin
+null_resource.deployment (local-exec): apiVersion: apps/v1
+null_resource.deployment (local-exec): kind: Deployment
+null_resource.deployment (local-exec): metadata:
+null_resource.deployment (local-exec):   name: "thanos-iks-mzr-deployment"
+null_resource.deployment (local-exec):   labels:
+null_resource.deployment (local-exec):     app: "thanos-iks-mzr"
+null_resource.deployment (local-exec): spec:
+null_resource.deployment (local-exec):   replicas: 3
+null_resource.deployment (local-exec):   selector:
+null_resource.deployment (local-exec):     matchLabels:
+null_resource.deployment (local-exec):       app: "thanos-iks-mzr-app"
+null_resource.deployment (local-exec):   template:
+null_resource.deployment (local-exec):     metadata:
+null_resource.deployment (local-exec):       labels:
+null_resource.deployment (local-exec):         app: "thanos-iks-mzr-app"
+null_resource.deployment (local-exec):     spec:
+null_resource.deployment (local-exec):       schedulerName: stork
+null_resource.deployment (local-exec):       containers:
+null_resource.deployment (local-exec):       - image: "test"
+null_resource.deployment (local-exec):         name: "thanos-iks-mzr-container"
+null_resource.deployment (local-exec):         volumeMounts:
+null_resource.deployment (local-exec):         - name: "thanos-iks-mzr-volume"
+null_resource.deployment (local-exec):           mountPath: "/portworxDir"
+null_resource.deployment (local-exec):       volumes:
+null_resource.deployment (local-exec):       - name: "thanos-iks-mzr-volume"
+null_resource.deployment (local-exec):         persistentVolumeClaim:
+null_resource.deployment (local-exec):           claimName: "thanos-iks-mzr-example-pvc"
+null_resource.deployment (local-exec): deployment.apps/thanos-iks-mzr-deployment created
+null_resource.deployment (local-exec): Name:                   thanos-iks-mzr-deployment
+null_resource.deployment (local-exec): Namespace:              default
+null_resource.deployment (local-exec): CreationTimestamp:      Wed, 21 Oct 2020 20:13:02 +0200
+null_resource.deployment (local-exec): Labels:                 app=thanos-iks-mzr
+null_resource.deployment (local-exec): Annotations:            deployment.kubernetes.io/revision: 1
+null_resource.deployment (local-exec): Selector:               app=thanos-iks-mzr-app
+null_resource.deployment (local-exec): Replicas:               3 desired | 3 updated | 3 total | 0 available | 3 unavailable
+null_resource.deployment (local-exec): StrategyType:           RollingUpdate
+null_resource.deployment (local-exec): MinReadySeconds:        0
+null_resource.deployment (local-exec): RollingUpdateStrategy:  25% max unavailable, 25% max surge
+null_resource.deployment (local-exec): Pod Template:
+null_resource.deployment (local-exec):   Labels:  app=thanos-iks-mzr-app
+null_resource.deployment (local-exec):   Containers:
+null_resource.deployment (local-exec):    thanos-iks-mzr-container:
+null_resource.deployment (local-exec):     Image:        test
+null_resource.deployment (local-exec):     Port:         <none>
+null_resource.deployment (local-exec):     Host Port:    <none>
+null_resource.deployment (local-exec):     Environment:  <none>
+null_resource.deployment (local-exec):     Mounts:
+null_resource.deployment (local-exec):       /portworxDir from thanos-iks-mzr-volume (rw)
+null_resource.deployment (local-exec):   Volumes:
+null_resource.deployment (local-exec):    thanos-iks-mzr-volume:
+null_resource.deployment (local-exec):     Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+null_resource.deployment (local-exec):     ClaimName:  thanos-iks-mzr-example-pvc
+null_resource.deployment (local-exec):     ReadOnly:   false
+null_resource.deployment (local-exec): Conditions:
+null_resource.deployment (local-exec):   Type           Status  Reason
+null_resource.deployment (local-exec):   ----           ------  ------
+null_resource.deployment (local-exec):   Available      False   MinimumReplicasUnavailable
+null_resource.deployment (local-exec):   Progressing    True    ReplicaSetUpdated
+null_resource.deployment (local-exec): OldReplicaSets:  <none>
+null_resource.deployment (local-exec): NewReplicaSet:   thanos-iks-mzr-deployment-cccff68c5 (3/3 replicas created)
+null_resource.deployment (local-exec): Events:
+null_resource.deployment (local-exec):   Type    Reason             Age   From                   Message
+null_resource.deployment (local-exec):   ----    ------             ----  ----                   -------
+null_resource.deployment (local-exec):   Normal  ScalingReplicaSet  1s    deployment-controller  Scaled up replica set thanos-iks-mzr-deployment-cccff68c5 to 3
+null_resource.deployment: Creation complete after 2s [id=5643454147113542234]
