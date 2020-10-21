@@ -1,0 +1,213 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] data.ibm_resource_group.resource_group" [label = "data.ibm_resource_group.resource_group", shape = "box"]
+		"[root] ibm_iam_authorization_policy.cos_policy" [label = "ibm_iam_authorization_policy.cos_policy", shape = "box"]
+		"[root] ibm_iam_authorization_policy.psql_policy" [label = "ibm_iam_authorization_policy.psql_policy", shape = "box"]
+		"[root] ibm_kp_key.root_key" [label = "ibm_kp_key.root_key", shape = "box"]
+		"[root] ibm_resource_instance.cos" [label = "ibm_resource_instance.cos", shape = "box"]
+		"[root] ibm_resource_instance.kms" [label = "ibm_resource_instance.kms", shape = "box"]
+		"[root] ibm_resource_instance.logdna" [label = "ibm_resource_instance.logdna", shape = "box"]
+		"[root] ibm_resource_instance.psql" [label = "ibm_resource_instance.psql", shape = "box"]
+		"[root] ibm_resource_instance.sysdig" [label = "ibm_resource_instance.sysdig", shape = "box"]
+		"[root] module.cluster.ibm_container_vpc_cluster.cluster" [label = "module.cluster.ibm_container_vpc_cluster.cluster", shape = "box"]
+		"[root] module.cluster.ibm_resource_instance.cos" [label = "module.cluster.ibm_resource_instance.cos", shape = "box"]
+		"[root] module.cluster.module.worker_pools.data.ibm_resource_group.pool_rg" [label = "module.cluster.module.worker_pools.data.ibm_resource_group.pool_rg", shape = "box"]
+		"[root] module.cluster.module.worker_pools.ibm_container_vpc_worker_pool.pool" [label = "module.cluster.module.worker_pools.ibm_container_vpc_worker_pool.pool", shape = "box"]
+		"[root] module.cluster.module.worker_pools.local.resource_groups" [label = "module.cluster.module.worker_pools.local.resource_groups", shape = "note"]
+		"[root] module.cluster.module.worker_pools.var.cluster_name_id" [label = "module.cluster.module.worker_pools.var.cluster_name_id", shape = "note"]
+		"[root] module.cluster.module.worker_pools.var.entitlement" [label = "module.cluster.module.worker_pools.var.entitlement", shape = "note"]
+		"[root] module.cluster.module.worker_pools.var.ibm_region" [label = "module.cluster.module.worker_pools.var.ibm_region", shape = "note"]
+		"[root] module.cluster.module.worker_pools.var.pool_list" [label = "module.cluster.module.worker_pools.var.pool_list", shape = "note"]
+		"[root] module.cluster.module.worker_pools.var.resource_group_id" [label = "module.cluster.module.worker_pools.var.resource_group_id", shape = "note"]
+		"[root] module.cluster.module.worker_pools.var.subnets" [label = "module.cluster.module.worker_pools.var.subnets", shape = "note"]
+		"[root] module.cluster.module.worker_pools.var.vpc_id" [label = "module.cluster.module.worker_pools.var.vpc_id", shape = "note"]
+		"[root] module.cluster.output.cluster_id" [label = "module.cluster.output.cluster_id", shape = "note"]
+		"[root] module.cluster.var.cluster_name" [label = "module.cluster.var.cluster_name", shape = "note"]
+		"[root] module.cluster.var.disable_public_service_endpoint" [label = "module.cluster.var.disable_public_service_endpoint", shape = "note"]
+		"[root] module.cluster.var.ibm_region" [label = "module.cluster.var.ibm_region", shape = "note"]
+		"[root] module.cluster.var.kube_version" [label = "module.cluster.var.kube_version", shape = "note"]
+		"[root] module.cluster.var.machine_type" [label = "module.cluster.var.machine_type", shape = "note"]
+		"[root] module.cluster.var.resource_group_id" [label = "module.cluster.var.resource_group_id", shape = "note"]
+		"[root] module.cluster.var.subnet_ids" [label = "module.cluster.var.subnet_ids", shape = "note"]
+		"[root] module.cluster.var.tags" [label = "module.cluster.var.tags", shape = "note"]
+		"[root] module.cluster.var.vpc_id" [label = "module.cluster.var.vpc_id", shape = "note"]
+		"[root] module.cluster.var.wait_till" [label = "module.cluster.var.wait_till", shape = "note"]
+		"[root] module.cluster.var.worker_pools" [label = "module.cluster.var.worker_pools", shape = "note"]
+		"[root] module.cluster.var.workers_per_zone" [label = "module.cluster.var.workers_per_zone", shape = "note"]
+		"[root] module.vpc.ibm_is_network_acl.multizone_acl" [label = "module.vpc.ibm_is_network_acl.multizone_acl", shape = "box"]
+		"[root] module.vpc.ibm_is_public_gateway.gateway" [label = "module.vpc.ibm_is_public_gateway.gateway", shape = "box"]
+		"[root] module.vpc.ibm_is_security_group_rule.allow_all_inbound" [label = "module.vpc.ibm_is_security_group_rule.allow_all_inbound", shape = "box"]
+		"[root] module.vpc.ibm_is_vpc.vpc" [label = "module.vpc.ibm_is_vpc.vpc", shape = "box"]
+		"[root] module.vpc.module.subnets.ibm_is_subnet.subnet" [label = "module.vpc.module.subnets.ibm_is_subnet.subnet", shape = "box"]
+		"[root] module.vpc.module.subnets.ibm_is_vpc_address_prefix.subnet_prefix" [label = "module.vpc.module.subnets.ibm_is_vpc_address_prefix.subnet_prefix", shape = "box"]
+		"[root] module.vpc.module.subnets.output.cidr_blocks" [label = "module.vpc.module.subnets.output.cidr_blocks", shape = "note"]
+		"[root] module.vpc.module.subnets.output.subnet_ids" [label = "module.vpc.module.subnets.output.subnet_ids", shape = "note"]
+		"[root] module.vpc.module.subnets.var.acl_id" [label = "module.vpc.module.subnets.var.acl_id", shape = "note"]
+		"[root] module.vpc.module.subnets.var.cidr_blocks" [label = "module.vpc.module.subnets.var.cidr_blocks", shape = "note"]
+		"[root] module.vpc.module.subnets.var.enable_acl_id" [label = "module.vpc.module.subnets.var.enable_acl_id", shape = "note"]
+		"[root] module.vpc.module.subnets.var.ibm_region" [label = "module.vpc.module.subnets.var.ibm_region", shape = "note"]
+		"[root] module.vpc.module.subnets.var.public_gateways" [label = "module.vpc.module.subnets.var.public_gateways", shape = "note"]
+		"[root] module.vpc.module.subnets.var.subnets_per_zone" [label = "module.vpc.module.subnets.var.subnets_per_zone", shape = "note"]
+		"[root] module.vpc.module.subnets.var.unique_id" [label = "module.vpc.module.subnets.var.unique_id", shape = "note"]
+		"[root] module.vpc.module.subnets.var.vpc_id" [label = "module.vpc.module.subnets.var.vpc_id", shape = "note"]
+		"[root] module.vpc.module.subnets.var.zones" [label = "module.vpc.module.subnets.var.zones", shape = "note"]
+		"[root] module.vpc.output.acl_id" [label = "module.vpc.output.acl_id", shape = "note"]
+		"[root] module.vpc.output.subnet_ids" [label = "module.vpc.output.subnet_ids", shape = "note"]
+		"[root] module.vpc.output.vpc_id" [label = "module.vpc.output.vpc_id", shape = "note"]
+		"[root] module.vpc.var.acl_rules" [label = "module.vpc.var.acl_rules", shape = "note"]
+		"[root] module.vpc.var.cidr_blocks" [label = "module.vpc.var.cidr_blocks", shape = "note"]
+		"[root] module.vpc.var.classic_access" [label = "module.vpc.var.classic_access", shape = "note"]
+		"[root] module.vpc.var.default_sg_allow_inbound_traffic" [label = "module.vpc.var.default_sg_allow_inbound_traffic", shape = "note"]
+		"[root] module.vpc.var.enable_public_gateway" [label = "module.vpc.var.enable_public_gateway", shape = "note"]
+		"[root] module.vpc.var.ibm_region" [label = "module.vpc.var.ibm_region", shape = "note"]
+		"[root] module.vpc.var.resource_group_id" [label = "module.vpc.var.resource_group_id", shape = "note"]
+		"[root] module.vpc.var.unique_id" [label = "module.vpc.var.unique_id", shape = "note"]
+		"[root] provider.ibm" [label = "provider.ibm", shape = "diamond"]
+		"[root] var.acl_rules" [label = "var.acl_rules", shape = "note"]
+		"[root] var.cidr_blocks" [label = "var.cidr_blocks", shape = "note"]
+		"[root] var.cos_plan" [label = "var.cos_plan", shape = "note"]
+		"[root] var.disable_public_service_endpoint" [label = "var.disable_public_service_endpoint", shape = "note"]
+		"[root] var.enable_public_gateway" [label = "var.enable_public_gateway", shape = "note"]
+		"[root] var.generation" [label = "var.generation", shape = "note"]
+		"[root] var.ibm_region" [label = "var.ibm_region", shape = "note"]
+		"[root] var.ibmcloud_api_key" [label = "var.ibmcloud_api_key", shape = "note"]
+		"[root] var.kms_plan" [label = "var.kms_plan", shape = "note"]
+		"[root] var.kms_root_key_name" [label = "var.kms_root_key_name", shape = "note"]
+		"[root] var.kube_version" [label = "var.kube_version", shape = "note"]
+		"[root] var.logdna_plan" [label = "var.logdna_plan", shape = "note"]
+		"[root] var.machine_type" [label = "var.machine_type", shape = "note"]
+		"[root] var.psql_plan" [label = "var.psql_plan", shape = "note"]
+		"[root] var.resource_group" [label = "var.resource_group", shape = "note"]
+		"[root] var.service_endpoints" [label = "var.service_endpoints", shape = "note"]
+		"[root] var.sysdig_plan" [label = "var.sysdig_plan", shape = "note"]
+		"[root] var.tags" [label = "var.tags", shape = "note"]
+		"[root] var.unique_id" [label = "var.unique_id", shape = "note"]
+		"[root] var.wait_till" [label = "var.wait_till", shape = "note"]
+		"[root] var.worker_pools" [label = "var.worker_pools", shape = "note"]
+		"[root] var.workers_per_zone" [label = "var.workers_per_zone", shape = "note"]
+		"[root] data.ibm_resource_group.resource_group" -> "[root] provider.ibm"
+		"[root] data.ibm_resource_group.resource_group" -> "[root] var.resource_group"
+		"[root] ibm_iam_authorization_policy.cos_policy" -> "[root] ibm_resource_instance.cos"
+		"[root] ibm_iam_authorization_policy.psql_policy" -> "[root] ibm_resource_instance.psql"
+		"[root] ibm_kp_key.root_key" -> "[root] ibm_resource_instance.kms"
+		"[root] ibm_kp_key.root_key" -> "[root] var.kms_root_key_name"
+		"[root] ibm_resource_instance.cos" -> "[root] ibm_kp_key.root_key"
+		"[root] ibm_resource_instance.cos" -> "[root] var.cos_plan"
+		"[root] ibm_resource_instance.kms" -> "[root] data.ibm_resource_group.resource_group"
+		"[root] ibm_resource_instance.kms" -> "[root] var.kms_plan"
+		"[root] ibm_resource_instance.kms" -> "[root] var.service_endpoints"
+		"[root] ibm_resource_instance.kms" -> "[root] var.unique_id"
+		"[root] ibm_resource_instance.logdna" -> "[root] data.ibm_resource_group.resource_group"
+		"[root] ibm_resource_instance.logdna" -> "[root] var.logdna_plan"
+		"[root] ibm_resource_instance.logdna" -> "[root] var.service_endpoints"
+		"[root] ibm_resource_instance.logdna" -> "[root] var.unique_id"
+		"[root] ibm_resource_instance.psql" -> "[root] ibm_kp_key.root_key"
+		"[root] ibm_resource_instance.psql" -> "[root] var.psql_plan"
+		"[root] ibm_resource_instance.sysdig" -> "[root] data.ibm_resource_group.resource_group"
+		"[root] ibm_resource_instance.sysdig" -> "[root] var.service_endpoints"
+		"[root] ibm_resource_instance.sysdig" -> "[root] var.sysdig_plan"
+		"[root] ibm_resource_instance.sysdig" -> "[root] var.unique_id"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] ibm_iam_authorization_policy.cos_policy"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] ibm_iam_authorization_policy.psql_policy"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] ibm_resource_instance.logdna"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] ibm_resource_instance.sysdig"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.cluster.module.worker_pools.ibm_container_vpc_worker_pool.pool"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.cluster.module.worker_pools.var.ibm_region"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.cluster.output.cluster_id"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.cluster.var.wait_till"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.vpc.ibm_is_security_group_rule.allow_all_inbound"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.vpc.module.subnets.output.cidr_blocks"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] module.vpc.output.acl_id"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] var.disable_public_service_endpoint"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] var.tags"
+		"[root] module.cluster.ibm_container_vpc_cluster.cluster" -> "[root] module.cluster.ibm_resource_instance.cos"
+		"[root] module.cluster.ibm_container_vpc_cluster.cluster" -> "[root] module.cluster.var.disable_public_service_endpoint"
+		"[root] module.cluster.ibm_container_vpc_cluster.cluster" -> "[root] module.cluster.var.ibm_region"
+		"[root] module.cluster.ibm_container_vpc_cluster.cluster" -> "[root] module.cluster.var.kube_version"
+		"[root] module.cluster.ibm_container_vpc_cluster.cluster" -> "[root] module.cluster.var.machine_type"
+		"[root] module.cluster.ibm_container_vpc_cluster.cluster" -> "[root] module.cluster.var.subnet_ids"
+		"[root] module.cluster.ibm_container_vpc_cluster.cluster" -> "[root] module.cluster.var.tags"
+		"[root] module.cluster.ibm_container_vpc_cluster.cluster" -> "[root] module.cluster.var.vpc_id"
+		"[root] module.cluster.ibm_container_vpc_cluster.cluster" -> "[root] module.cluster.var.workers_per_zone"
+		"[root] module.cluster.ibm_resource_instance.cos" -> "[root] module.cluster.var.cluster_name"
+		"[root] module.cluster.ibm_resource_instance.cos" -> "[root] module.cluster.var.resource_group_id"
+		"[root] module.cluster.module.worker_pools.data.ibm_resource_group.pool_rg" -> "[root] module.cluster.module.worker_pools.local.resource_groups"
+		"[root] module.cluster.module.worker_pools.data.ibm_resource_group.pool_rg" -> "[root] provider.ibm"
+		"[root] module.cluster.module.worker_pools.ibm_container_vpc_worker_pool.pool" -> "[root] module.cluster.module.worker_pools.data.ibm_resource_group.pool_rg"
+		"[root] module.cluster.module.worker_pools.ibm_container_vpc_worker_pool.pool" -> "[root] module.cluster.module.worker_pools.var.cluster_name_id"
+		"[root] module.cluster.module.worker_pools.ibm_container_vpc_worker_pool.pool" -> "[root] module.cluster.module.worker_pools.var.entitlement"
+		"[root] module.cluster.module.worker_pools.ibm_container_vpc_worker_pool.pool" -> "[root] module.cluster.module.worker_pools.var.resource_group_id"
+		"[root] module.cluster.module.worker_pools.ibm_container_vpc_worker_pool.pool" -> "[root] module.cluster.module.worker_pools.var.subnets"
+		"[root] module.cluster.module.worker_pools.ibm_container_vpc_worker_pool.pool" -> "[root] module.cluster.module.worker_pools.var.vpc_id"
+		"[root] module.cluster.module.worker_pools.local.resource_groups" -> "[root] module.cluster.module.worker_pools.var.pool_list"
+		"[root] module.cluster.module.worker_pools.var.cluster_name_id" -> "[root] module.cluster.ibm_container_vpc_cluster.cluster"
+		"[root] module.cluster.module.worker_pools.var.ibm_region" -> "[root] module.cluster.var.ibm_region"
+		"[root] module.cluster.module.worker_pools.var.pool_list" -> "[root] module.cluster.var.worker_pools"
+		"[root] module.cluster.module.worker_pools.var.resource_group_id" -> "[root] module.cluster.var.resource_group_id"
+		"[root] module.cluster.module.worker_pools.var.subnets" -> "[root] module.cluster.var.ibm_region"
+		"[root] module.cluster.module.worker_pools.var.subnets" -> "[root] module.cluster.var.subnet_ids"
+		"[root] module.cluster.module.worker_pools.var.vpc_id" -> "[root] module.cluster.var.vpc_id"
+		"[root] module.cluster.output.cluster_id" -> "[root] module.cluster.ibm_container_vpc_cluster.cluster"
+		"[root] module.cluster.var.cluster_name" -> "[root] var.unique_id"
+		"[root] module.cluster.var.ibm_region" -> "[root] var.ibm_region"
+		"[root] module.cluster.var.kube_version" -> "[root] var.kube_version"
+		"[root] module.cluster.var.machine_type" -> "[root] var.machine_type"
+		"[root] module.cluster.var.resource_group_id" -> "[root] data.ibm_resource_group.resource_group"
+		"[root] module.cluster.var.subnet_ids" -> "[root] module.vpc.output.subnet_ids"
+		"[root] module.cluster.var.vpc_id" -> "[root] module.vpc.output.vpc_id"
+		"[root] module.cluster.var.wait_till" -> "[root] var.wait_till"
+		"[root] module.cluster.var.worker_pools" -> "[root] var.worker_pools"
+		"[root] module.cluster.var.workers_per_zone" -> "[root] var.workers_per_zone"
+		"[root] module.vpc.ibm_is_network_acl.multizone_acl" -> "[root] module.vpc.ibm_is_vpc.vpc"
+		"[root] module.vpc.ibm_is_network_acl.multizone_acl" -> "[root] module.vpc.var.acl_rules"
+		"[root] module.vpc.ibm_is_public_gateway.gateway" -> "[root] module.vpc.ibm_is_vpc.vpc"
+		"[root] module.vpc.ibm_is_public_gateway.gateway" -> "[root] module.vpc.var.enable_public_gateway"
+		"[root] module.vpc.ibm_is_public_gateway.gateway" -> "[root] module.vpc.var.ibm_region"
+		"[root] module.vpc.ibm_is_security_group_rule.allow_all_inbound" -> "[root] module.vpc.ibm_is_vpc.vpc"
+		"[root] module.vpc.ibm_is_security_group_rule.allow_all_inbound" -> "[root] module.vpc.var.default_sg_allow_inbound_traffic"
+		"[root] module.vpc.ibm_is_vpc.vpc" -> "[root] module.vpc.var.classic_access"
+		"[root] module.vpc.ibm_is_vpc.vpc" -> "[root] module.vpc.var.resource_group_id"
+		"[root] module.vpc.ibm_is_vpc.vpc" -> "[root] module.vpc.var.unique_id"
+		"[root] module.vpc.module.subnets.ibm_is_subnet.subnet" -> "[root] module.vpc.module.subnets.ibm_is_vpc_address_prefix.subnet_prefix"
+		"[root] module.vpc.module.subnets.ibm_is_subnet.subnet" -> "[root] module.vpc.module.subnets.var.acl_id"
+		"[root] module.vpc.module.subnets.ibm_is_subnet.subnet" -> "[root] module.vpc.module.subnets.var.enable_acl_id"
+		"[root] module.vpc.module.subnets.ibm_is_subnet.subnet" -> "[root] module.vpc.module.subnets.var.public_gateways"
+		"[root] module.vpc.module.subnets.ibm_is_vpc_address_prefix.subnet_prefix" -> "[root] module.vpc.module.subnets.var.cidr_blocks"
+		"[root] module.vpc.module.subnets.ibm_is_vpc_address_prefix.subnet_prefix" -> "[root] module.vpc.module.subnets.var.ibm_region"
+		"[root] module.vpc.module.subnets.ibm_is_vpc_address_prefix.subnet_prefix" -> "[root] module.vpc.module.subnets.var.subnets_per_zone"
+		"[root] module.vpc.module.subnets.ibm_is_vpc_address_prefix.subnet_prefix" -> "[root] module.vpc.module.subnets.var.unique_id"
+		"[root] module.vpc.module.subnets.ibm_is_vpc_address_prefix.subnet_prefix" -> "[root] module.vpc.module.subnets.var.vpc_id"
+		"[root] module.vpc.module.subnets.ibm_is_vpc_address_prefix.subnet_prefix" -> "[root] module.vpc.module.subnets.var.zones"
+		"[root] module.vpc.module.subnets.output.cidr_blocks" -> "[root] module.vpc.module.subnets.ibm_is_subnet.subnet"
+		"[root] module.vpc.module.subnets.output.subnet_ids" -> "[root] module.vpc.module.subnets.ibm_is_subnet.subnet"
+		"[root] module.vpc.module.subnets.var.acl_id" -> "[root] module.vpc.ibm_is_network_acl.multizone_acl"
+		"[root] module.vpc.module.subnets.var.cidr_blocks" -> "[root] module.vpc.var.cidr_blocks"
+		"[root] module.vpc.module.subnets.var.ibm_region" -> "[root] module.vpc.var.ibm_region"
+		"[root] module.vpc.module.subnets.var.public_gateways" -> "[root] module.vpc.ibm_is_public_gateway.gateway"
+		"[root] module.vpc.module.subnets.var.unique_id" -> "[root] module.vpc.var.unique_id"
+		"[root] module.vpc.module.subnets.var.vpc_id" -> "[root] module.vpc.ibm_is_vpc.vpc"
+		"[root] module.vpc.output.acl_id" -> "[root] module.vpc.ibm_is_network_acl.multizone_acl"
+		"[root] module.vpc.output.subnet_ids" -> "[root] module.vpc.module.subnets.output.subnet_ids"
+		"[root] module.vpc.output.vpc_id" -> "[root] module.vpc.ibm_is_vpc.vpc"
+		"[root] module.vpc.var.acl_rules" -> "[root] var.acl_rules"
+		"[root] module.vpc.var.cidr_blocks" -> "[root] var.cidr_blocks"
+		"[root] module.vpc.var.enable_public_gateway" -> "[root] var.enable_public_gateway"
+		"[root] module.vpc.var.ibm_region" -> "[root] var.ibm_region"
+		"[root] module.vpc.var.resource_group_id" -> "[root] data.ibm_resource_group.resource_group"
+		"[root] module.vpc.var.unique_id" -> "[root] var.unique_id"
+		"[root] provider.ibm (close)" -> "[root] ibm_iam_authorization_policy.cos_policy"
+		"[root] provider.ibm (close)" -> "[root] ibm_iam_authorization_policy.psql_policy"
+		"[root] provider.ibm (close)" -> "[root] ibm_resource_instance.logdna"
+		"[root] provider.ibm (close)" -> "[root] ibm_resource_instance.sysdig"
+		"[root] provider.ibm (close)" -> "[root] module.cluster.module.worker_pools.ibm_container_vpc_worker_pool.pool"
+		"[root] provider.ibm (close)" -> "[root] module.vpc.ibm_is_security_group_rule.allow_all_inbound"
+		"[root] provider.ibm" -> "[root] var.generation"
+		"[root] provider.ibm" -> "[root] var.ibm_region"
+		"[root] provider.ibm" -> "[root] var.ibmcloud_api_key"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] provider.ibm (close)"
+	}
+}
+
