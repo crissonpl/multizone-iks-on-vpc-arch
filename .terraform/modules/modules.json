@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"cluster.worker_pools","Source":"./worker_pools","Dir":"vpc_cluster/worker_pools"},{"Key":"vpc","Source":"./multizone_vpc","Dir":"multizone_vpc"},{"Key":"vpc.subnets","Source":"./module_vpc_tier","Dir":"multizone_vpc/module_vpc_tier"},{"Key":"","Source":"","Dir":"."},{"Key":"cluster","Source":"./vpc_cluster","Dir":"vpc_cluster"}]}
